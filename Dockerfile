@@ -1,3 +1,5 @@
 FROM alpine:latest
 
-RUN apk add --no-cache curl htop bind-tools
+RUN apk add --no-cache dumb-init openssh rsync curl
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
